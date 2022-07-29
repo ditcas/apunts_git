@@ -44,16 +44,35 @@ Aquest repositori remote permet que varis usuaris puguin compartir-lo i treballa
 
 Totes les comandes següents s'executen des de la terminal situada en la carpeta on hi ha el repositori local.
 
-```bash
-$ git remote -v # Veure el llistat de repositoris remots
 
-$ git remote add <nom del remote> <url del repositori remot propocionada per GitHub> # Vincula el repositori local amb el remote.
+## Veure el llistat de repositoris remots
+
+```bash
+$ git remote -v
+```
+
+## Vincular el repositori local amb el remote
+
+```bash
+$ git remote add <nom del remote> <url del repositori remot propocionada per GitHub> 
 ```
 
 Per exemple 
 
 ```bash
 $ git remote add origin https://github.com/ditcas/apunts_python.git
+```
+
+## Actualitzar el remote pujant tots els nous commits
+
+```bash
+$ git push <nom del remote> <nom de la branca>
+```
+
+## Actualitzar el local amb els nous commits del remote
+
+```bash
+$ git pull <nom del remote> <nom de la branca>
 ```
 
 # Iniciar un repositori local
