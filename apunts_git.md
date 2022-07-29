@@ -55,3 +55,9 @@ Per exemple
 ```bash
 $ git remote add origin https://github.com/ditcas/apunts_python.git
 ```
+
+# Iniciar un repositori local
+
+```bash
+$ git init .  # Inicia el repositori en la carpeta on es troba la terminal.
+```
