@@ -1,3 +1,5 @@
+Git és un sistema de control de versions. (VCS)
+
 # Comandes bàsiques
 
 Totes les comandes següents s'executen des de la terminal situada en la carpeta on hi ha el repositori local.
@@ -22,6 +24,11 @@ $ git add . # afegir tots els arxius
 $ git commit -m "message"  # -m indica message
 ```
 
+## Veure el llistat de commits
+```bash
+$ git log
+```
+
 # Conceptes bàsics
 
 ## Carpeta .git
@@ -30,6 +37,11 @@ $ git commit -m "message"  # -m indica message
 - El repositori és una carpeta anomenada .git, la qual conté l'històric de canvis de tots els arxius.
 - Aquesta carpeta .git es troba també en la carpeta on hi ha els arxius i és d'aquests dels que crea l'històric.
 - Si moc la carpeta .git deixarà de tenir en el repositori els arxius anteriors i passarà a tenir els que es trobin en la nova carpeta on l'has deixat.
+
+## Arxiu .gitignore
+
+- Arxiu que conté els noms dels arxius que volem que Git ignori (queda fora del repositori i per tant del control de versions).
+
 
 ## Working tree
 L'estat dels arxius que es troben en la carpeta on hi ha el repositori de Git.
@@ -80,3 +92,49 @@ $ git pull <nom del remote> <nom de la branca>
 ```bash
 $ git init .  # Inicia el repositori en la carpeta on es troba la terminal.
 ```
+
+# Branques
+
+- Per defecte hi ha una branca inicial, anomenada "main", a vegades "master".
+
+- Per veure la branca en la que s'està treballant
+```bash
+$ git branch
+o
+$ git status
+```
+
+- Per crear i moure't a la vegada a aquella branca
+```bash
+$ git checkout -b <nom de la branca>
+```
+
+- Per moure't entre branques
+```bash
+$ git switch <nom de la branca a la que vols anar>
+o
+$ git checkout <nom de la branca a la que vols anar>
+```
+
+Aleshores el Finder mostra els arxius contemplant els commits fets a aquesta branca.
+
+- Ajuntar una branca a una altra
+Ens situem a la branca sobre la que volem incorporar els commit
+
+```bash
+$ git merge <nom de la branca que volem ajuntar>
+```
+
+> Git merge requereix un commit del merge (el fa automàtic) i cal escriure el missatge. Per defecte s'obre l'editor de text (Vim) amb el següent text "Merge branch <nom de la branca>". Per acceptar-lo, fem "Escape", ":" i "wq".
+
+- Per esborrar una branca
+
+Des de qualsevol branca que no sigui la que volem esborrar.
+
+```bash
+$ git branch -d <nom de la branca que volem esborrar>
+```
+
+- Quan crees un arxiu mentre no fas "commit" no s'adjudica el canvi a cap branca perquè de moment només està en el working tree.
+
+- Quan fas una modificació a un arxiu mentre no has fet "commit" qualsevol canvi entre branques no serà possible.
