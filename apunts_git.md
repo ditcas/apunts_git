@@ -24,6 +24,17 @@ $ git add . # afegir tots els arxius
 $ git commit -m "message"  # -m indica message
 ```
 
+El missatge del "commit" l'iniciem amb una paraula diferent segons si els canvis tenen a veure amb
+- Arreglar errors
+```bash
+$ git commit -m "fix: "
+```
+- Noves característiques
+```bash
+$ git commit -m "feat: "
+```
+
+
 ## Veure el llistat de commits
 ```bash
 $ git log
