@@ -33,6 +33,11 @@ $ git commit -m "fix: "
 ```bash
 $ git commit -m "feat: "
 ```
+- Millora del codi
+```bash
+$ git commit -m "refactor: "
+```
+
 
 
 ## Veure el llistat de commits
