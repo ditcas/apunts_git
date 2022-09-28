@@ -154,3 +154,20 @@ $ git branch -d <nom de la branca que volem esborrar>
 - Quan crees un arxiu mentre no fas "commit" no s'adjudica el canvi a cap branca perquè de moment només està en el working tree.
 
 - Quan fas una modificació a un arxiu mentre no has fet "commit" qualsevol canvi entre branques no serà possible.
+
+# Claus SSH
+
+Claus (una privada i una pública) que poden ser usades en diverses eines que demanen una interacció amb l'usuari, i permeten certificar la identitat de l'usuari.
+
+- Vols enviar uns canvis (push) al remote. Si ho sol·licitem fent ús de les claus SSH, la clau privada (única i intransferible) encripta la informació que volem enviar.
+- El receptor té la nostra clau pública (enllaçada inequívocament amb la clau privada) i intentarà desencriptar la informació. Si pot fer-ho, a part de tenir la informació, haurà certificat que erem nosaltres qui li enviavem, doncs sinó la clau no li hauria funcionat.
+- Un cop desencriptada, executararia el push de la informació rebuda.
+
+Les claus estan guardades en la carpeta del meu usuari, dins una carpeta oculta .ssh. L'extensió .pub indica que és la clau pública.
+
+- Quan creem un repositori local de Git, dins la carpeta .git hi ha un arxiu anomenat "config". Des de la terminal, podem veure'l fent cat config, o modificar-lo fent nano config. Aquí és on indicarem que volem relacionar-nos a través de claus ssh.
+
+# Clone vs Fork
+
+- Quan clonem un repositori, fem una còpia dels arxius en el nostre directori, però no genera un repositori de Git. És a dir, en GitHub tenim accés de només lectura (no podem fer push ni pull contra ell, doncs pertany al seu creador. Seria com un accés directe al repositori del creador.)
+- Si fem un Fork, passem a tenir una còpia d'aquell repositori en un repositori propi de GitHub. Aleshores podem fer un Clone del nostre repositori de GitHub i passarem a tenir els arxius en el nostre directori lligats a aquest remote. 
